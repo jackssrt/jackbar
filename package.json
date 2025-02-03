@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "preact": "^10.25.3",
+    "scss": "^0.2.4",
     "zebar": "^2.7.0"
   },
   "devDependencies": {
