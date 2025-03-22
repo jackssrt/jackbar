@@ -1,4 +1,5 @@
 import { type Workspace as GlazeWmWorkspace } from "glazewm";
+import { motion } from "motion/react";
 import type { GlazeWmOutput } from "zebar";
 
 type Props = {
@@ -8,12 +9,16 @@ type Props = {
 
 export default function Workspace({ glazewm, workspace }: Props) {
 	return (
-		<div
-			className={`h-4 w-4 cursor-pointer rounded ${workspace.isDisplayed ? "bg-sky" : "bg-surface0"}`}
+		<motion.div
+			animate={{
+				scale: workspace.isDisplayed ? 1.2 : 1,
+				backgroundColor: workspace.isDisplayed ? "var(--color-sky)" : "var(--color-surface)",
+			}}
+			className={`h-4 w-4 cursor-pointer rounded`}
 			onClick={() => {
-				// TODO when glazewm supports focus --container-id we can use that instead
+				// TODO when glazewm supports focus --container-id
 				void glazewm.runCommand(`focus --workspace ${workspace.name}`);
 			}}
-		></div>
+		></motion.div>
 	);
 }

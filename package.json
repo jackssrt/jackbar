@@ -12,6 +12,7 @@
 		"@types/node": "^22.13.11",
 		"clsx": "^2.1.1",
 		"glazewm": "^1.7.0",
+		"motion": "^12.5.0",
 		"preact": "^10.25.3",
 		"prettier": "^3.4.2",
 		"prettier-plugin-tailwindcss": "^0.6.11",
