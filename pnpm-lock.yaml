@@ -10,7 +10,10 @@ importers:
     dependencies:
       '@tailwindcss/vite':
         specifier: ^4.0.6
-        version: 4.0.6(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
+        version: 4.0.6(vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
+      '@types/node':
+        specifier: ^22.13.11
+        version: 22.13.11
       preact:
         specifier: ^10.25.3
         version: 10.25.4
@@ -32,7 +35,7 @@ importers:
         version: 9.20.0
       '@preact/preset-vite':
         specifier: ^2.9.3
-        version: 2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
+        version: 2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
       eslint:
         specifier: ^9.20.1
         version: 9.20.1(jiti@2.4.2)
@@ -44,7 +47,7 @@ importers:
         version: 8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.6.3)
       vite:
         specifier: ^6.0.5
-        version: 6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
+        version: 6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
 
 packages:
 
@@ -593,6 +596,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/node@22.13.11':
+    resolution: {integrity: sha512-iEUCUJoU0i3VnrCmgoWCXttklWcvoCIx4jzcP22fioIVSdTmjgoEvmAO/QPw6TcS9k5FrNgn4w7q5lGOd1CT5g==}
 
   '@typescript-eslint/eslint-plugin@8.24.0':
     resolution: {integrity: sha512-aFcXEJJCI4gUdXgoo/j9udUYIHgF23MFkg09LFz2dzEmU0+1Plk4rQWv/IYKvPHAtlkkGoB3m5e6oUp+JPsNaQ==}
@@ -1382,6 +1388,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
+
   update-browserslist-db@1.1.2:
     resolution: {integrity: sha512-PPypAm5qvlD7XMZC3BujecnaOxwhrtoFR+Dqkk5Aa/6DssiH0ibKoketaj9w8LP7Bont1rYeoV5plxD7RTEPRg==}
     hasBin: true
@@ -1758,17 +1767,17 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.0
 
-  '@preact/preset-vite@2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))':
+  '@preact/preset-vite@2.10.1(@babel/core@7.26.7)(preact@10.25.4)(vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))':
     dependencies:
       '@babel/core': 7.26.7
       '@babel/plugin-transform-react-jsx': 7.25.9(@babel/core@7.26.7)
       '@babel/plugin-transform-react-jsx-development': 7.25.9(@babel/core@7.26.7)
-      '@prefresh/vite': 2.4.7(preact@10.25.4)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
+      '@prefresh/vite': 2.4.7(preact@10.25.4)(vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.26.7)
       debug: 4.4.0
       kolorist: 1.8.0
-      vite: 6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
+      vite: 6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
       vite-prerender-plugin: 0.5.5
     transitivePeerDependencies:
       - preact
@@ -1782,7 +1791,7 @@ snapshots:
 
   '@prefresh/utils@1.2.0': {}
 
-  '@prefresh/vite@2.4.7(preact@10.25.4)(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))':
+  '@prefresh/vite@2.4.7(preact@10.25.4)(vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))':
     dependencies:
       '@babel/core': 7.26.7
       '@prefresh/babel-plugin': 0.5.1
@@ -1790,7 +1799,7 @@ snapshots:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.25.4
-      vite: 6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
+      vite: 6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
     transitivePeerDependencies:
       - supports-color
 
@@ -1909,13 +1918,13 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.0.6
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.6
 
-  '@tailwindcss/vite@4.0.6(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))':
+  '@tailwindcss/vite@4.0.6(vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4))':
     dependencies:
       '@tailwindcss/node': 4.0.6
       '@tailwindcss/oxide': 4.0.6
       lightningcss: 1.29.1
       tailwindcss: 4.0.6
-      vite: 6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
+      vite: 6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4)
 
   '@tauri-apps/api@2.0.2': {}
 
@@ -1926,6 +1935,10 @@ snapshots:
   '@types/estree@1.0.6': {}
 
   '@types/json-schema@7.0.15': {}
+
+  '@types/node@22.13.11':
+    dependencies:
+      undici-types: 6.20.0
 
   '@typescript-eslint/eslint-plugin@8.24.0(@typescript-eslint/parser@8.24.0(eslint@9.20.1(jiti@2.4.2))(typescript@5.6.3))(eslint@9.20.1(jiti@2.4.2))(typescript@5.6.3)':
     dependencies:
@@ -2677,6 +2690,8 @@ snapshots:
 
   typescript@5.6.3: {}
 
+  undici-types@6.20.0: {}
+
   update-browserslist-db@1.1.2(browserslist@4.24.4):
     dependencies:
       browserslist: 4.24.4
@@ -2697,12 +2712,13 @@ snapshots:
       source-map: 0.7.4
       stack-trace: 1.0.0-pre2
 
-  vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4):
+  vite@6.0.11(@types/node@22.13.11)(jiti@2.4.2)(lightningcss@1.29.1)(sass-embedded@1.83.4):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.1
       rollup: 4.34.1
     optionalDependencies:
+      '@types/node': 22.13.11
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.29.1
