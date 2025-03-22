@@ -4,7 +4,8 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite build --mode development --watch"
+		"dev": "vite build --mode development --watch",
+		"prettier": "prettier --write src"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.6",
@@ -13,6 +14,7 @@
 		"glazewm": "^1.7.0",
 		"preact": "^10.25.3",
 		"prettier": "^3.4.2",
+		"prettier-plugin-tailwindcss": "^0.6.11",
 		"tailwind-merge": "^3.0.2",
 		"tailwindcss": "^4.0.6",
 		"zebar": "^2.7.0"
