@@ -1,7 +1,12 @@
-import type { PropsWithChildren } from "preact/compat";
+import type { ComponentProps, PropsWithChildren } from "preact/compat";
+import { cn } from "../utils";
 
-type Props = {};
+type Props = PropsWithChildren<ComponentProps<"div">>;
 
-export default function Component({ children }: PropsWithChildren<Props>) {
-	return <div className="size-xl">{children}</div>;
+export default function Component(props: Props) {
+	return (
+		<div {...props} className={cn(props.className, "border-crust rounded bg-base p-2 w-fit h-8")}>
+			{props.children}
+		</div>
+	);
 }
