@@ -8,7 +8,7 @@ export default function Workspaces() {
 		glazewm && (
 			<Component className="flex gap-2">
 				{glazewm.currentWorkspaces.map((workspace) => (
-					<Workspace key={workspace.id} workspace={workspace} />
+					<Workspace key={workspace.id} glazewm={glazewm} workspace={workspace} />
 				))}
 			</Component>
 		)
