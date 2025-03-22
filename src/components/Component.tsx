@@ -3,5 +3,5 @@ import type { PropsWithChildren } from "preact/compat";
 type Props = {};
 
 export default function Component({ children }: PropsWithChildren<Props>) {
-	return <div>{children}</div>;
+	return <div className="size-xl">{children}</div>;
 }
