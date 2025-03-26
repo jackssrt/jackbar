@@ -3,7 +3,10 @@ import { useContext, useEffect, useMemo, useState } from "preact/hooks";
 import { createProviderGroup } from "zebar";
 
 function useProviderValue() {
-	const providers = useMemo(() => createProviderGroup({ glazewm: { type: "glazewm" } }), []);
+	const providers = useMemo(
+		() => createProviderGroup({ glazewm: { type: "glazewm" }, cpu: { type: "cpu" }, audio: { type: "audio" } }),
+		[],
+	);
 	const [outputs, setOutputs] = useState(providers.outputMap);
 	useEffect(() => {
 		providers.onOutput((outputs) => {
