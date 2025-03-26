@@ -12,13 +12,18 @@ export default tseslint.config(
 		languageOptions: {
 			parserOptions: {
 				projectService: true,
-				// @ts-expect-error import.meta is annoying
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 				tsconfigRootDir: import.meta.dirname,
 			},
 		},
 		rules: {
 			"@typescript-eslint/consistent-type-definitions": ["error", "type"],
+			"@typescript-eslint/restrict-template-expressions": [
+				"error",
+				{
+					allowNumber: true,
+					allowBoolean: true,
+				},
+			],
 		},
 	},
 );
