@@ -1,20 +1,15 @@
-import { type PropsWithChildren, type ReactNode } from "react";
+import { type ComponentProps, type PropsWithChildren } from "react";
 import IconTextComponent from "./IconTextComponent";
 import PercentTicker from "./PercentTicker";
 
-type Props = {
-	icon: ReactNode;
+type Props = ComponentProps<typeof IconTextComponent> & {
 	valuePercentUnits: number;
 	warningLevel?: number;
 	criticalLevel?: number;
 };
 
-export default function PercentComponent({
-	icon,
-	valuePercentUnits,
-	warningLevel,
-	criticalLevel,
-}: PropsWithChildren<Props>) {
+export default function PercentComponent(props: PropsWithChildren<Props>) {
+	const { valuePercentUnits, warningLevel, criticalLevel } = props;
 	return (
 		<IconTextComponent
 			animate={{
@@ -25,7 +20,7 @@ export default function PercentComponent({
 							? "var(--color-yellow)"
 							: "var(--color-text)",
 			}}
-			icon={icon}
+			{...props}
 		>
 			<PercentTicker value={valuePercentUnits} />
 		</IconTextComponent>
