@@ -28,4 +28,7 @@
 	--color-base: #1e1e2e;
 	--color-mantle: #181825;
 	--color-crust: #11111b;
+	--font-*: initial;
+	--font-mono: "0xProto Nerd Font", monospace;
+	--text-base: 0.875rem;
 }
