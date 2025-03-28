@@ -1,7 +1,12 @@
 import { motion } from "motion/react";
 import { type PropsWithChildren } from "react";
 
-type Props = {};
+type Props = {
+	/**
+	 * In this case, passing in a key is required.
+	 */
+	key: string;
+};
 
 export default function AnimatedIcon({ children }: PropsWithChildren<Props>) {
 	return (
