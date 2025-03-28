@@ -18,11 +18,18 @@ export default defineConfig({
 
 				const exePath = process.env.ZEBAR_EXE_PATH ?? "zebar.exe";
 
-				try {
-					// Kill the existing zebar.exe process
-					execSync(`taskkill /IM ${exePath} /F`, { stdio: "inherit" });
-				} catch (err) {
-					console.log(err);
+				// kill all zebar.exe processes
+				// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+				while (true) {
+					try {
+						// Kill the existing zebar.exe process nicely
+						// to let it free its reserved screen space
+						execSync(`taskkill /IM "${exePath}"`);
+						// guess we have to force it
+						execSync(`taskkill /F /IM "${exePath}"`);
+					} catch {
+						break;
+					}
 				}
 
 				// Start the new zebar.exe process
