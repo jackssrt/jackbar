@@ -3,7 +3,7 @@ import useDate from "../hooks/useDate";
 import IconTextComponent from "./IconTextComponent";
 import TickerTrack from "./TickerTrack";
 
-const DAY_MAP = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+const DAY_MAP = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 
 export default function DateDisplay() {
 	const date = useDate(1000);
