@@ -19,12 +19,15 @@ export default function ProgressBar({
 		<motion.div
 			{...rest}
 			layout
+			initial={false}
 			animate={{
 				width: `${progressPercent}%`,
 				backgroundColor: `var(--color-${color})`,
 				transition: {
-					duration: animationDuration,
-					ease: "linear",
+					width: {
+						duration: animationDuration,
+						ease: "linear",
+					},
 				},
 			}}
 			className={cn(className, "absolute right-0 bottom-0 left-0 h-0.5")}
