@@ -3,6 +3,7 @@ import { useZebar } from "../contexts/zebarContext";
 import AnimatedIcon from "./AnimatedIcon";
 import IconTextComponent from "./IconTextComponent";
 import ProgressBar from "./ProgressBar";
+import Separator from "./Separator";
 
 export default function MediaDisplay() {
 	const { media } = useZebar();
@@ -32,7 +33,7 @@ export default function MediaDisplay() {
 				}}
 			>
 				{session.artist && <span className="text-xs">{session.artist}</span>}
-				{session.artist && session.title && <span>・</span>}
+				{session.artist && session.title && <Separator />}
 				{session.title && <span>{session.title}</span>}
 				<ProgressBar progressPercent={(session.position / session.endTime) * 100} animationDuration={5} />
 			</IconTextComponent>
