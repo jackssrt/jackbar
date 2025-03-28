@@ -27,6 +27,13 @@ export default function MediaDisplay() {
 					)
 				}
 				className="overflow-clip"
+				onClick={() => {
+					if (session.isPlaying) {
+						media.pause();
+					} else {
+						media.play();
+					}
+				}}
 			>
 				{session.artist && <span className="text-xs">{session.artist}</span>}
 				{session.artist && session.title && <span>・</span>}
