@@ -4,10 +4,6 @@ import AnimatedIcon from "./AnimatedIcon";
 import IconTextComponent from "./IconTextComponent";
 import ProgressBar from "./ProgressBar";
 
-type Props = {};
-// ALWAYS export your types please
-type MediaSession = NonNullable<NonNullable<ReturnType<typeof useZebar>["media"]>["currentSession"]>;
-
 export default function MediaDisplay() {
 	const { media } = useZebar();
 	const session = media?.currentSession;
