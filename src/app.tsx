@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import "./app.css";
 import CPUDisplay from "./components/CPUDisplay";
 import DateDisplay from "./components/DateDisplay";
+import MediaDisplay from "./components/MediaDisplay";
 import TimeDisplay from "./components/TimeDisplay";
 import VolumeDisplay from "./components/VolumeDisplay";
 import WorkspacesDisplay from "./components/WorkspacesDisplay";
@@ -17,6 +18,7 @@ export function App() {
 			>
 				<div className="flex items-center gap-0.5">
 					<WorkspacesDisplay />
+					<MediaDisplay />
 				</div>
 				<div className="flex items-center justify-center gap-0.5">
 					<DateDisplay />

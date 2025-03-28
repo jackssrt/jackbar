@@ -4,7 +4,13 @@ import { createProviderGroup } from "zebar";
 
 function useProviderValue() {
 	const providers = useMemo(
-		() => createProviderGroup({ glazewm: { type: "glazewm" }, cpu: { type: "cpu" }, audio: { type: "audio" } }),
+		() =>
+			createProviderGroup({
+				glazewm: { type: "glazewm" },
+				cpu: { type: "cpu" },
+				audio: { type: "audio" },
+				media: { type: "media" },
+			}),
 		[],
 	);
 	const [outputs, setOutputs] = useState(providers.outputMap);
