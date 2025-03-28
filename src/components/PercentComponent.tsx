@@ -1,6 +1,7 @@
 import { type ComponentProps, type PropsWithChildren } from "react";
 import IconTextComponent from "./IconTextComponent";
 import PercentTicker from "./PercentTicker";
+import ProgressBar from "./ProgressBar";
 
 type Props = ComponentProps<typeof IconTextComponent> & {
 	valuePercentUnits: number;
@@ -8,21 +9,27 @@ type Props = ComponentProps<typeof IconTextComponent> & {
 	criticalLevel?: number;
 };
 
-export default function PercentComponent(props: PropsWithChildren<Props>) {
-	const { valuePercentUnits, warningLevel, criticalLevel } = props;
+export default function PercentComponent({
+	valuePercentUnits,
+	warningLevel,
+	criticalLevel,
+	...rest
+}: PropsWithChildren<Props>) {
+	const color =
+		criticalLevel && valuePercentUnits >= criticalLevel
+			? "red"
+			: warningLevel && valuePercentUnits >= warningLevel
+				? "yellow"
+				: "text";
 	return (
 		<IconTextComponent
 			animate={{
-				color:
-					criticalLevel && valuePercentUnits >= criticalLevel
-						? "var(--color-red)"
-						: warningLevel && valuePercentUnits >= warningLevel
-							? "var(--color-yellow)"
-							: "var(--color-text)",
+				color: `var(--color-${color})`,
 			}}
-			{...props}
+			{...rest}
 		>
 			<PercentTicker value={valuePercentUnits} />
+			<ProgressBar progressPercent={valuePercentUnits} animationDuration={0.125} color={color}></ProgressBar>
 		</IconTextComponent>
 	);
 }
