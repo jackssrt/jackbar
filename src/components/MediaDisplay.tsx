@@ -1,16 +1,18 @@
 import { MdPause, MdPlayArrow } from "react-icons/md";
 import { useZebar } from "../contexts/zebarContext";
+import { handleVolumeWheelEvent } from "../utils";
 import AnimatedIcon from "./AnimatedIcon";
 import IconTextComponent from "./IconTextComponent";
 import ProgressBar from "./ProgressBar";
 import Separator from "./Separator";
 
 export default function MediaDisplay() {
-	const { media } = useZebar();
+	const { audio, media } = useZebar();
 	const session = media?.currentSession;
 
 	return (
-		session && (
+		session &&
+		audio && (
 			<IconTextComponent
 				icon={
 					session.isPlaying ? (
@@ -31,6 +33,7 @@ export default function MediaDisplay() {
 						media.play();
 					}
 				}}
+				onWheel={handleVolumeWheelEvent(audio)}
 			>
 				{session.artist && <span className="text-xs">{session.artist}</span>}
 				{session.artist && session.title && <Separator />}
