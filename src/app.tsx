@@ -14,7 +14,7 @@ export function App() {
 			<motion.div
 				initial={{ transform: "translateY(-8rem)" }}
 				animate={{ transform: "translateY(0rem)" }}
-				className="grid h-[36px] [grid-template-columns:1fr_auto_1fr] gap-0.5 overflow-hidden bg-transparent p-0.5 font-mono select-none"
+				className="grid h-[34px] [grid-template-columns:1fr_auto_1fr] gap-0.5 overflow-hidden bg-transparent p-0.5 pb-0 font-mono select-none"
 			>
 				<div className="flex items-center gap-0.5">
 					<WorkspacesDisplay />
