@@ -5,19 +5,27 @@ import Component from "./Component";
 
 type Props = ComponentProps<typeof Component> & {
 	icon: ReactNode;
+	progressBar?: ReactNode;
 };
 
-export default function IconTextComponent(props: PropsWithChildren<Props>) {
+export default function IconTextComponent({
+	children,
+	className,
+	icon,
+	progressBar,
+	...props
+}: PropsWithChildren<Props>) {
 	return (
-		<Component layout {...props} className={cn("relative flex gap-2", props.className)}>
+		<Component {...props} className={cn("relative gap-2", className)}>
 			<motion.div layout>
 				<AnimatePresence initial={false} mode="wait">
-					{props.icon}
+					{icon}
 				</AnimatePresence>
 			</motion.div>
 			<motion.div layout className="flex h-fit w-fit">
-				{props.children}
+				{children}
 			</motion.div>
+			{progressBar}
 		</Component>
 	);
 }

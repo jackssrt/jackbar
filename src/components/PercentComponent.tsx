@@ -7,12 +7,14 @@ type Props = ComponentProps<typeof IconTextComponent> & {
 	valuePercentUnits: number;
 	warningLevel?: number;
 	criticalLevel?: number;
+	id: string;
 };
 
 export default function PercentComponent({
 	valuePercentUnits,
 	warningLevel,
 	criticalLevel,
+	id,
 	...rest
 }: PropsWithChildren<Props>) {
 	const color =
@@ -26,10 +28,17 @@ export default function PercentComponent({
 			animate={{
 				color: `var(--color-${color})`,
 			}}
+			progressBar={
+				<ProgressBar
+					id={id}
+					progressPercent={valuePercentUnits}
+					animationDuration={0.125}
+					color={color}
+				></ProgressBar>
+			}
 			{...rest}
 		>
 			<PercentTicker value={valuePercentUnits} />
-			<ProgressBar progressPercent={valuePercentUnits} animationDuration={0.125} color={color}></ProgressBar>
 		</IconTextComponent>
 	);
 }

@@ -13,6 +13,7 @@ export default function VolumeDisplay() {
 				warningLevel={30}
 				criticalLevel={70}
 				onWheel={handleVolumeWheelEvent(audio)}
+				id="volume-display"
 			></PercentComponent>
 		)
 	);

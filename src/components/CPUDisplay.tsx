@@ -11,6 +11,7 @@ export default function CPUDisplay() {
 				valuePercentUnits={cpu.usage}
 				warningLevel={80}
 				criticalLevel={90}
+				id="cpu-display"
 			></PercentComponent>
 		)
 	);

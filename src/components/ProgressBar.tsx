@@ -18,7 +18,6 @@ export default function ProgressBar({
 	return (
 		<motion.div
 			{...rest}
-			layout
 			initial={false}
 			animate={{
 				width: `${progressPercent}%`,

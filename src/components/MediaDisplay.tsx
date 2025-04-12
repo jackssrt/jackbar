@@ -45,11 +45,17 @@ export default function MediaDisplay() {
 				className="overflow-clip"
 				onWheel={handleVolumeWheelEvent(audio)}
 				onMouseDown={handleMouseDown}
+				progressBar={
+					<ProgressBar
+						id={"media-display"}
+						progressPercent={(session.position / session.endTime) * 100}
+						animationDuration={5}
+					></ProgressBar>
+				}
 			>
 				{session.artist && <span className="text-xs">{session.artist}</span>}
 				{session.artist && session.title && <Separator />}
 				{session.title && <span>{session.title}</span>}
-				<ProgressBar progressPercent={(session.position / session.endTime) * 100} animationDuration={5} />
 			</IconTextComponent>
 		)
 	);
