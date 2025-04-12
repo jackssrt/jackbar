@@ -11,7 +11,7 @@ export function handleVolumeWheelEvent(audio: AudioOutput) {
 		event.preventDefault();
 		if (!audio.defaultPlaybackDevice) return;
 
-		const delta = event.deltaY > 0 ? -3 : 3;
+		const delta = event.deltaY > 0 ? -2 : 2;
 		void audio.setVolume(clamp(0, 100, audio.defaultPlaybackDevice.volume + delta));
 	};
 }
