@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { LayoutGroup, motion } from "motion/react";
 import "./app.css";
 import CPUDisplay from "./components/CPUDisplay";
 import DateDisplay from "./components/DateDisplay";
@@ -17,16 +17,22 @@ export function App() {
 				className="grid h-[34px] [grid-template-columns:1fr_auto_1fr] gap-0.5 overflow-hidden bg-transparent p-0.5 pb-0 font-mono select-none"
 			>
 				<div className="flex items-center gap-0.5">
-					<WorkspacesDisplay />
-					<MediaDisplay />
+					<LayoutGroup>
+						<WorkspacesDisplay />
+						<MediaDisplay />
+					</LayoutGroup>
 				</div>
 				<div className="flex items-center justify-center gap-0.5">
-					<DateDisplay />
-					<TimeDisplay />
+					<LayoutGroup>
+						<DateDisplay />
+						<TimeDisplay />
+					</LayoutGroup>
 				</div>
 				<div className="flex items-center justify-end gap-0.5">
-					<VolumeDisplay />
-					<CPUDisplay />
+					<LayoutGroup>
+						<VolumeDisplay />
+						<CPUDisplay />
+					</LayoutGroup>
 				</div>
 			</motion.div>
 		</ZebarProvider>

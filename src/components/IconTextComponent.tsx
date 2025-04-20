@@ -17,14 +17,12 @@ export default function IconTextComponent({
 }: PropsWithChildren<Props>) {
 	return (
 		<Component {...props} className={cn("relative gap-2", className)}>
-			<motion.div layout>
+			<motion.div>
 				<AnimatePresence initial={false} mode="wait">
 					{icon}
 				</AnimatePresence>
 			</motion.div>
-			<motion.div layout className="flex h-fit w-fit">
-				{children}
-			</motion.div>
+			<motion.div className="flex h-4 w-max">{children}</motion.div>
 			{progressBar}
 		</Component>
 	);

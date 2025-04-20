@@ -25,8 +25,10 @@ export default function PercentComponent({
 				: "text";
 	return (
 		<IconTextComponent
-			animate={{
-				color: `var(--color-${color})`,
+			variants={{
+				animate: {
+					color: `var(--color-${color})`,
+				},
 			}}
 			progressBar={
 				<ProgressBar
